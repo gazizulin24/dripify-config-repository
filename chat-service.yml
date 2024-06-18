@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: chat-service
+  data:
+    mongodb:
+      database: chat
+      host: global-mongodb
+      port: 27017
+
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://service-registry:8761/eureka/
+
+server:
+  port: 8074
