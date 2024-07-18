@@ -1,0 +1,47 @@
+spring:
+  application:
+    name: catalog-service
+
+  datasource:
+    username: dripifyadmin
+    password: dripifysuper123
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://catalog-postgres:5432/catalog
+
+  flyway:
+    url: jdbc:postgresql://catalog-postgres:5432/catalog
+    user: dripifyadmin
+    password: dripifysuper123
+    locations: classpath:db/migration
+    enabled: true
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak:8080/realms/dripify
+  cache:
+    type: redis
+    redis:
+      host: redis-global
+      port: 6379
+  kafka:
+    bootstrap-servers: kafka:9092
+
+keycloak-url: http://keycloak:8080/realms/dripify
+
+springdoc:
+  api-docs:
+    path: /api-docs
+
+server:
+  port: 8070
+eureka:
+  client:
+    enabled: true
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://service-registry:8761/eureka/
+
+services:
+  imagesServiceUrl: "http://images-service:8071/"
