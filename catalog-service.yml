@@ -44,4 +44,4 @@ eureka:
       defaultZone: http://service-registry:8761/eureka/
 
 services:
-  imagesServiceUrl: "http://images-service:8071/"
+  imagesServiceUrl: "images-service:8071/"
